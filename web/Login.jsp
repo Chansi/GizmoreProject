@@ -23,7 +23,12 @@
 
             }
 
-
+           p.serifx {
+             color: black;
+             font-family: "Berlin Sans FB", Times, serif;
+             font-size:  17px;
+             
+             }
             .header .container {
                 text-transform: lowercase;
                 color: #fff;
@@ -181,7 +186,7 @@
                 <h1> Login Here </h1>
                 <div class ="form">
 
-                    <form action="UserControl" method="POST">
+                    <form action="login" method="POST">
                         <input type ="hidden" name ="command" value ="UserAv"/>
 
 
@@ -198,7 +203,8 @@
                         <input type="submit" value="Submit" class = "submit">
                         <br>
                         <a href="signUp.jsp" class="linkacc">Don't have an account? </a>
-
+                        
+                        <p style="text-indent: 3em;"> ${param.message} </p>
                     </form>
                 </div>
             </div>

@@ -62,8 +62,8 @@
 
 
             .signupbox{
-                width: 320px;
-                height: 460px;
+                width: 420px;
+                height: 660px;
                 background: white;
                 color: black;
                 top: 30%;
@@ -107,6 +107,7 @@
             }
 
             .form{
+                height: 30%;
                 width: 100%;
                 padding: 10px 20px;
                 display: inline-block;
@@ -182,28 +183,43 @@
                 <h1> Sign Up Here </h1>
                 <div class ="form">
 
-                    <form action="" method="POST">
-                        <input type ="hidden" name ="command" value ="UserAv"/>
+                    <form action="Usercontrol" method="Post">
+                        <input type ="hidden" name ="command" value ="Reg"/>
 
 
                         <p>Email Address </p>
                         <input type ="email" name = "email"  required placeholder= "Enter Email address">
                         <br>
-                        <p> Name </p>
-                        <input type ="text" name = "name" required placeholder= "Enter Name">
+                        <p> First name </p>
+                        <input type ="text" name = "fname" required placeholder= "Enter Frist Name">
                         <br>
-
+                        
+                        <p> Last name </p>
+                        <input type ="text" name = "lname" required placeholder= "Enter Last Name">
+                        <br>
+                       
+                        <p> contact </p>
+                        <input type ="text" name = "contact" required placeholder= "Enter Contact number">
+                        <br>
                         <p> User Type </p>
-                        <input type ="text" name ="Utype" required placeholder= "Owner/Requester">
+                         <select id="accounttype" name="Utype" required placeholder= "Account type">
+                         <option value="Owner">Owner</option>
+                         <option value="Requester" >Requester</option>  
+                         </select>
+                        <br>
                         <br>
                         <p> Password </p>
                         <input type ="password" name = "password" required placeholder= "Create a password">
                         <br>
+                        
+                        <p> Confirm Password </p>
+                        <input type ="password" name = "cpassword" required placeholder= "Confirm your password">
                         <br>
+                       
 
                         <input type="submit" value="Submit" class = "submit">
                         <br>
-                        <a href="Login.jsp" class="linkacc">Already have an account? </a>
+                        <a href="Login.jsp" class="linkacc"> <p style="text-indent: 5em;"> Already have an account? </p> </a>
 
                     </form>
                 </div>
