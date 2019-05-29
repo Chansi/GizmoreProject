@@ -5,6 +5,8 @@
  */
 package Model;
 
+
+
 /**
  *
  * @author chanura
@@ -78,7 +80,7 @@ public class User {
     public void setContactnumber(String contactnumber) {
         this.contactnumber = contactnumber;
     }
-    
+   
     
     
 }

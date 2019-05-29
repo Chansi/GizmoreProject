@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
 /**
  *
  * @author chanura
@@ -83,6 +84,7 @@ public class login extends HttpServlet {
                session.setAttribute("email", email);
                RequestDispatcher dis = request.getRequestDispatcher("Requester_Home.jsp");
                dis.forward(request, response);
+              
                break;
             }
             default:{

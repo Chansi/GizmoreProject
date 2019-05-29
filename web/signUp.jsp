@@ -183,8 +183,8 @@
                 <h1> Sign Up Here </h1>
                 <div class ="form">
 
-                    <form action="Usercontrol" method="Post">
-                        <input type ="hidden" name ="command" value ="Reg"/>
+                    <form action="Usercontrol" method="GET">
+                        <input type ="hidden" name ="commands" value ="Reg"/>
 
 
                         <p>Email Address </p>

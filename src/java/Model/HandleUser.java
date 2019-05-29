@@ -5,11 +5,16 @@
  */
 package Model;
 
+import java.io.IOException;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.http.Part;
 /**
  *
  * @author chanura
@@ -87,4 +92,15 @@ public class HandleUser {
         return null;
     }
         
+    public void createad(String pcatogory,String pname,String price,String status, InputStream in) throws SQLException{
+       
+        PreparedStatement ps = connection.prepareStatement("insert into ad values (?,?,?,?,?)");
+        ps.setString(1, pcatogory);
+        ps.setString(2, pname);
+        ps.setString(3,price );
+        ps.setString(4, status);
+        ps.setBlob(5,in);
+        ps.executeUpdate();
+    }
+    
 }

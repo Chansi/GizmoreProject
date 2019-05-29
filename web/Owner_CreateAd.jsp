@@ -135,10 +135,10 @@
 
 
         <div class ="form">
-            <form action=" ">
-
+            <form action="Usercontrol" method="POST" enctype="multipart/form-data">
+             <input type ="hidden" name ="commands" value ="createad"/>
                 <label for="cate">Product Category</label>
-                <input type="text" id="cate" name="cate" placeholder="Enter Product Category.." required>
+                <input type="text" id="cate" name="pcategory" placeholder="Enter Product Category.." required>
                 <label for="Pname">Product Name</label>
                 <input type="text" id="Pname" name="Pname" placeholder="Enter Product Name.."required>
                 <label for="price">Price</label>
@@ -149,8 +149,9 @@
                     <option value="unavailable">unavailable </option>
 
                 </select>
-
-                <label for="image"> Add an Image </lable>
+                <input type="file" placeholder="Upload your file here" name="image" required><br><label for="fileupload"> Select an  Image to upload</label>
+          
+            
 
                     <input type="submit" value="Submit">
                     </form>
