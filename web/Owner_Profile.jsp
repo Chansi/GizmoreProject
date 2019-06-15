@@ -194,23 +194,17 @@
                 <h1> My Profile</h1>
 
                 <div class="table">
-                    <table>
-                        <tr>
-                            <th> Email Address</th>
-                            <th> Full Name </th>
-                            <th> User Type </th>
+                    <label for="pName">Email</label>
+                <input type="text"  id="pName" name="pname" placeholder="Enter product name.." value="${myprofile.email}"readonly>
 
-
-                        </tr>
-
-                        <tr>
-                            <td>${req.email}</td>
-                            <td>${req.name}</td>
-
-                        </tr>
-                        </c:forEach>
-
-                    </table>
+                <label for="cate">First NAme </label>
+                <input type="text" id="cate" name="pcat"  placeholder="Enter product Category.." value="${myprofile.firstname}" readonly>
+                
+                 <label for="pName">Last Name</label>
+                <input type="text"  id="pName" name="ownername" placeholder="Enter product name.." value="${myprofile.lastname}"readonly>
+                
+                 <label for="pName">Contact numberl</label>
+                 <input type="text"  id="pName" name="owneremail" placeholder="Enter product name.." value="${myprofile.contactnumber}"readonly>
 
                 </div>
 

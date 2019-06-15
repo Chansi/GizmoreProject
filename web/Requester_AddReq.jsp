@@ -137,20 +137,31 @@
 
 
         <div class ="form">
-            <form action=" ">
-
+            <form action="Usercontrol" method="post">
+                  <input type ="hidden" name="commands" value="addrequest">
 
                 <label for="pName">Product Name</label>
-                <input type="text"  id="pName" placeholder="Enter product name.."required>
+                <input type="text"  id="pName" name="pname" placeholder="Enter product name.." value="${adddata.pname}"readonly>
 
                 <label for="cate">Product Category </label>
-                <input type="text" id="cate"  placeholder="Enter product Category.."  required>
+                <input type="text" id="cate" name="pcat"  placeholder="Enter product Category.." value="${adddata.productcatogory}" readonly>
+                
+                 <label for="pName">Owner Name</label>
+                <input type="text"  id="pName" name="ownername" placeholder="Enter product name.." value="${adddata.owner_name}"readonly>
+                
+                 <label for="pName">Owner email</label>
+                 <input type="text"  id="pName" name="owneremail" placeholder="Enter product name.." value="${adddata.owner_email}"readonly>
 
                 <label for="duration">Duration </label>
-                <input type="text" id="duration"  placeholder="Enter the duration.."required>
+                 <select id="duration" name="duration">
+                    <option value="cash"> Per one Day</option>
+                    <option value="credit">Per one Week</option>
+                    <option value="debit"> Per one Month</option>
+                    <option value="debit">Per one year</option>
+                </select>
 
                 <label for="des">Description </label>
-                <input type="text" id="des"  placeholder="Description, if necessary..">
+                <input type="text" id="des" name="description"  placeholder="Description, if necessary..">
 
 
                 <label for="pay">Payment  required</label>
@@ -162,11 +173,11 @@
 
 
                 <label for="add">Address </label>
-                <input type="text" id="add"  placeholder="Enter your Address.."  required>
+                <input type="text" id="add" name="location"  placeholder="Enter your Address.."  required>
 
 
                 <label for="cont">Contact number </label>
-                <input type="text" id="cont"  placeholder="Enter contact details.."  required>
+                <input type="text" id="cont" name="contact" placeholder="Enter contact details.."  required>
 
                 <input type="submit" value="Submit">
 

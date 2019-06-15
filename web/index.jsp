@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
     <head>
         <title>Visitor_HomePage</title>
@@ -55,7 +56,11 @@ and open the template in the editor.
             font-size: 20px; 
         }
         .table{
-            margin-top: 30px;
+            margin-top: 30px;          
+            overflow: auto;
+        }
+         th, td {
+            padding: 25px;
         }
       
     </style>
@@ -90,51 +95,27 @@ and open the template in the editor.
 
 
         <div class="table">
-            <table  >
-                <tr>
-                    <th> Table Walter</th>
+            <table>
+              
+            <c:forEach var="pr" items="${All_adslist}">
+                
+                <th>
+                ${pr.pname}                           
+                <img src="data:image/jpg;base64,${pr.getImage()}" alt=""width='200px'height='200px'/>
                 <br>
-                <th> Okidoki Table </th>
-
-                <th> Stools Kitchen</th>
-
-                <th> Shelf Gloria</th>
-                <th> Shelf Gloria</th>
-                </tr>
-
-
-                <th>
-                    <img src="12.png" alt=""width='250px'height='250px'/>
-                         <button>Request</button>
-                </th>
-
-                <th>
-                    <img src="23.png" alt="" width='250px' height='250px'/>
-                      <button>Request</button>
-                </th>
-
-                <th>
-                    <img src="45.png" alt="" width='250px'height=250px'/>
-                      <button>Request</button>
-                </th>
-                <th>
-                    <img src="34.png" alt="" width='250px' height='250px'/>
-                      <button>Request</button>
-                </th>
-
-
-                <th> 
-                    <img src="5.png" alt="" width="250px" height='250px'/>
-                      <button>Request</button>
-                </th> 
-
-
-                <c:forEach var="" items="">
-                    <tr>
-
-                    </tr>
-
-                </c:forEach>
+                  ${pr.owner_name} 
+                  <br>
+                  ${pr.owner_email} 
+                  <br>
+                  ${pr.price} 
+                  <br>
+                  ${pr.location} 
+                  <br>
+                 <a href="#" >Request</a>              
+                </th>  
+            </c:forEach>
+                  
+            
             </table>
             <br>
             <br>

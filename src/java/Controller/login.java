@@ -5,11 +5,13 @@
  */
 package Controller;
 
+import Model.Ad;
 import Model.HandleUser;
 import Model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLEncoder;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -74,6 +76,9 @@ public class login extends HttpServlet {
                HttpSession session = request.getSession();
                session.setAttribute("firstname", firstname);
                session.setAttribute("email", email);
+                HandleUser use = new HandleUser();
+               List<Ad> ads = use.viewallad();
+               request.setAttribute("All_adslist", ads);
                RequestDispatcher dis = request.getRequestDispatcher("Owner_Home.jsp");
                dis.forward(request, response);
                break;
@@ -82,9 +87,11 @@ public class login extends HttpServlet {
                HttpSession session = request.getSession();
                session.setAttribute("firstname", firstname);
                session.setAttribute("email", email);
+               HandleUser use = new HandleUser();
+               List<Ad> ads = use.viewallad();
+               request.setAttribute("All_adslist", ads);
                RequestDispatcher dis = request.getRequestDispatcher("Requester_Home.jsp");
-               dis.forward(request, response);
-              
+               dis.forward(request, response);              
                break;
             }
             default:{

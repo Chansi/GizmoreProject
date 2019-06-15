@@ -18,16 +18,61 @@ public class Ad {
     String pname;
     String price;
     String status;
-    Image image;
+    String owner_name;
+    String owner_email;
+    String location;
+    String image;
     Part part;
 
-    public Ad(String productcatogory, String pname, String price, String status, Image image) {
+    public Ad(String productcatogory, String pname, String price, String status, String image) {
         this.productcatogory = productcatogory;
         this.pname = pname;
         this.price = price;
         this.status = status;
         this.image = image;
     }
+
+    public Ad(String productcatogory, String pname, String price, String status, String owner_name, String owner_email, String image) {
+        this.productcatogory = productcatogory;
+        this.pname = pname;
+        this.price = price;
+        this.status = status;
+        this.owner_name = owner_name;
+        this.owner_email = owner_email;
+        this.image = image;
+    }
+
+    public Ad(String productcatogory, String pname, String price, String status, String owner_name, String owner_email, String location, String image) {
+        this.productcatogory = productcatogory;
+        this.pname = pname;
+        this.price = price;
+        this.status = status;
+        this.owner_name = owner_name;
+        this.owner_email = owner_email;
+        this.location = location;
+        this.image = image;
+    }
+
+    
+    
+    
+    public String getOwner_name() {
+        return owner_name;
+    }
+
+    public void setOwner_name(String owner_name) {
+        this.owner_name = owner_name;
+    }
+
+    public String getOwner_email() {
+        return owner_email;
+    }
+
+    public void setOwner_email(String owner_email) {
+        this.owner_email = owner_email;
+    }
+    
+    
     
     public Ad(String productcatogory, String pname, String price, String status, Part p){
         
@@ -73,11 +118,11 @@ public class Ad {
         this.status = status;
     }
 
-    public Image getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
+    public void setImage(String image) {
         this.image = image;
       
     }
@@ -85,5 +130,11 @@ public class Ad {
      public Part getpart() {
         return part;
     }
-    
+        public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 }

@@ -63,7 +63,7 @@
         }
 
         .signupbox{
-            width: 1000px;
+            width: 1200px;
             height: 800px;
             background: white;
             color: black;
@@ -89,6 +89,7 @@
             padding: 0;
             line-height: 1.6;
             font-size: 15px;
+            
 
         }
         .signupbox input{
@@ -134,6 +135,8 @@
         }
         .table{
             margin-top: 2px;
+            height:50%;
+            width: 100%;
         }
 
         .Update  a {

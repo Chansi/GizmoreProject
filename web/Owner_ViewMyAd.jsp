@@ -216,10 +216,7 @@
 
             </div>
 
-            <div class ="Update">
-                <a href=" ">Update Details</a>
-
-            </div>
+         
 
     </body>
 </html>

@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -185,31 +186,34 @@
 
             <div class="table">
                 <table>
+                    <c:forEach var="pr" items="${myreq}">
+                          <c:url var="deletelink" value="Usercontrol">
+                    <c:param name="commands" value="deleterequest"/>
+                        <c:param name="pname" value="${pr.product}"/>
+                        <c:param name="powner" value="${pr.owneremail}"/>
+                        <c:param name="preqemail" value="${pr.requstoremail}"/>
+                     </c:url>   
                     <tr>
                         
                         <th> Product Name </th>
-                        <th> Product Category</th>
+                        <th> Owner Name</th>
                         <th> Duration </th>
-                        <th>Description</th>
-                        <th> Payment Method </th>
-                        <th> Address </th>
-                        <th> Contact Number</th>
+                        <th>Status</th>
+                        <th> Location  </th>
+                        <th>Payment Method</th>
                         <th> Delete Request</th>
 
                     </tr>
 
                     <tr>
                        
-                        <td>Laptop </td>
-                        <td>Electronics </td>
-                        <td>From 3rd May - 10th May</td>
-                        <td>With Ms word 2016</td>
-                        <td>37, Highlevel Road </td>
-                        <td> Cash</td>
-                        <td>011-2927531/0766092288</td>
-                        
-
-                        <td> <a href ="${delLink} " name = "delete"> Delete </a> </td>
+                        <td>${pr.product} </td>
+                        <td>${pr.ownername} </td>
+                        <td>${pr.duration}</td>
+                        <td>${pr.requestState}</td>
+                        <td>${pr.location} </td>
+                        <td> ${pr.payment_method}</td>                                             
+                        <td> <a href ="${deletelink} " name = "delete"> Delete </a> </td>
                     </tr>
 
 
@@ -221,10 +225,7 @@
 
             </div>
 
-            <div class ="Update">
-                <a href=" ">Update Details</a>
 
-            </div>
 
     </body>
 </html>

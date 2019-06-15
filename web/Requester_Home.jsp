@@ -4,9 +4,10 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
     <head>
-        <title>Owner_Home</title>
+        <title>Requstor_Home</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -59,10 +60,12 @@ and open the template in the editor.
 
         }
         .table{
-            margin-left: 5px;
             margin-top: 30px;
+            overflow: auto;
         }
-     
+         th, td {
+            padding: 25px;
+        }
     </style>
     <body>
     <body>
@@ -80,9 +83,8 @@ and open the template in the editor.
         <div class="header">
             <div class="header-right">
                 <a href="index.jsp"> Logout </a>
-                <a   href="Requester_Profile.jsp ">Profile</a>
-                <a   href="Requester_AddReq.jsp">Add Requests</a>
-                <a  href="Requester_ViewMyReq.jsp ">View My Requests</a>
+                <a   href="Usercontrol?commands=viewprofile ">Profile</a>
+                <a href="Usercontrol?commands=viewmyreq">View My Requests</a>
                 <a  class="active" href= "Requester_Home.jsp">Home</a>
 
 
@@ -92,49 +94,32 @@ and open the template in the editor.
 
 
         <div class="table">
-            <table  >
-                <tr>
-                    <th> Table Walter</th>
+            <table>
+               <c:forEach var="pr" items="${All_adslist}">
+                     <c:url var="viewlink" value="Usercontrol">
+             
+                    <c:param name="commands" value="viewreqdata"/>
+                        <c:param name="object" value="${pr}"/>
+                        <c:param name="email" value="${pr.owner_email}"/>
+                        <c:param name="pname" value="${pr.pname}"/>
+                        
+                     </c:url>    
+                <th>
+                ${pr.pname} 
+                             
+                <img src="data:image/jpg;base64,${pr.getImage()}" alt=""width='200px'height='200px'/>
                 <br>
-                <th> Okidoki Table </th>
-                <th> Stools Kitchen</th>
-                <th> Shelf Gloria</th>
-                <th> Shelf Gloria</th>
-                </tr>
-
-                <th>
-                    <img src="12.png" alt=""width='250px'height='250px'/>
-                     <button>Request</button> 
-                </th>
-
-                <th>
-                    <img src="23.png" alt="" width='250px' height='250px'/>
-                    <button>Request</button>
-                </th>
-
-                <th>
-                    <img src="45.png" alt="" width='250px'height=250px'/>
-                    <button>Request</button>
-                </th>
-                <th>
-                    <img src="34.png" alt="" width='250px' height='250px'/>
-                    <button>Request</button>
-                </th>
-
-
-                <th> 
-                    <img src="5.png" alt="" width="250px" height='250px'/>
-                    <button>Request</button>
-                </th> 
-
-
-
-                <c:forEach var="" items="">
-                    <tr>
-
-                    </tr>
-
-                </c:forEach>
+                  ${pr.owner_name} 
+                  <br>
+                  ${pr.owner_email} 
+                  <br>
+                  ${pr.price} 
+                  <br>
+                   ${pr.location} 
+                  <br>
+                <a href=${viewlink}> Request </a>              
+                </th>  
+            </c:forEach>
             </table>
             <br>
             <br>

@@ -143,6 +143,8 @@
                 <input type="text" id="Pname" name="Pname" placeholder="Enter Product Name.."required>
                 <label for="price">Price</label>
                 <input type="text" id="price" name="price" placeholder="Enter price per hour/week/month .." required>
+                <label for="price">Location</label>
+                <input type="text" id="price" name="location" placeholder="121/20 Townhall colombo2.." required>
                 <label for="status">Product Status</label>
                 <select id="status" name="status">
                     <option value="available">Available</option>
